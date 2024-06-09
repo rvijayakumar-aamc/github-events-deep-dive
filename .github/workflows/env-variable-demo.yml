@@ -17,6 +17,7 @@ jobs:
           run: |
             echo "Job Test variable $TEST_VAR"
             echo "Github Secrets ${{secrets.MONGO_DB_PASSWORD}}"
+            echo "Invalid Github Secrets ${{secrets.MONGO_DB_PASSWORD_INV}}"
   automation:
     runs-on: ubuntu-latest
     steps:
