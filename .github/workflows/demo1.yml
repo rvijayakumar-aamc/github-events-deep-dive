@@ -4,6 +4,8 @@ on:
     types:
       - opened
   workflow_dispatch: 
+env:
+  MONGO_DB_NAME: gha-demo-db
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -17,6 +19,9 @@ jobs:
       - name: Test code
         run: npm run test
       - name: Build code
-        run: npm run build
+        run: |
+          npm run build
+          echo "Mongo DB = ${{env.MONGO_DB_NAME}}"
+          echo "Mango = $MONGO_DB_NAME"
       - name: Deploy project
         run: echo "Deploying..."
