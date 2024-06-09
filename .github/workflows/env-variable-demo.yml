@@ -23,5 +23,5 @@ jobs:
     - name: AutomationStep2
       env:
         TEST_VAR: Test_Variable_Automation_Step_Level
-      run: echo "Step Test variable  $TEST_VAR"
+      run: echo "Step Test variable 123  $TEST_VAR"
     
