@@ -1,0 +1,27 @@
+name: Env variable demo
+on: 
+  pull_request:
+    types:
+      - opened
+  workflow_dispatch: 
+env:
+  MONGO_DB_NAME: gha-demo-db
+  TEST_VAR: Test_Variable_Workflow_Level
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+        TEST_VAR: Test_Variable_Deploy_Job_Level
+    steps:
+        - name: Deploy Print Env variable
+          run: echo "Job Test variable $TEST_VAR"
+  automation:
+    runs-on: ubuntu-latest
+    steps:
+    - name: AutomationStep1
+      run: echo "Workflow Test variable  $TEST_VAR"
+    - name: AutomationStep2
+      env:
+        TEST_VAR: Test_Variable_Automation_Step_Level
+      run: echo "Step Test variable  $TEST_VAR"
+    
