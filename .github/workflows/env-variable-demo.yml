@@ -10,6 +10,7 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: Development
     env:
         TEST_VAR: Deploy_Job_Level
     steps:
@@ -18,11 +19,16 @@ jobs:
             echo "Job Test variable $TEST_VAR"
             echo "Github Secrets ${{secrets.MONGO_DB_PASSWORD}}"
             echo "Invalid Github Secrets ${{secrets.MONGO_DB_PASSWORD_INV}}"
+            echo "Secret from Dev ${{secrets.RV_ENV_SECRET}}"
+            echo "Env variable from DEv - ${{secrets.RV_ENV_VARIABLE}}"
   automation:
     runs-on: ubuntu-latest
+    environment: FTest
     steps:
     - name: AutomationStep1
-      run: echo "Workflow Test variable  $TEST_VAR"
+      run: |
+        echo "Workflow Test variable  $TEST_VAR"
+        echo "Env variable from FTEST - ${{secrets.RV_ENV_VARIABLE}}"
     - name: AutomationStep2
       env:
         TEST_VAR: Automation_Step_Level
