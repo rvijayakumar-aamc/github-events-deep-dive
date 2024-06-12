@@ -19,7 +19,7 @@ jobs:
             echo "Job Test variable $TEST_VAR"
             echo "Github Secrets ${{ secrets.MONGO_DB_PASSWORD }}"
             echo "Secret from Dev ${{ secrets.RV_ENV_SECRET }}"
-            echo "Env variable from DEv - ${{ secrets.RV_ENV_VARIABLE }}"
+            echo "Env variable from DEv - ${{ env.RV_ENV_VARIABLE }}"
   automation:
     runs-on: ubuntu-latest
     needs: deploy
@@ -28,7 +28,7 @@ jobs:
     - name: AutomationStep1
       run: |
         echo "Workflow Test variable  $TEST_VAR"
-        echo "Env variable from FTEST - ${{ secrets.RV_ENV_VARIABLE }}"
+        echo "Env variable from FTEST - ${{ env.RV_ENV_VARIABLE }}"
     - name: AutomationStep2
       env:
         TEST_VAR: Automation_Step_Level
