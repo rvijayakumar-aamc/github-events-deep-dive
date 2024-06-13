@@ -1,0 +1,26 @@
+name: Workflow Conditional Flow
+on:
+    push:
+        branches:    
+          - main
+          - develop
+jobs:
+  build:
+    name: Build My App
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout Code
+          run: |
+            echo "Checking out code..."
+        - name: Build Files
+          run: |
+            echo "Build package..."
+  deploy:
+    name: Deploy My App
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+        - name: Deploy App
+          run: |
+            echo 'Deploy Application...'    
+        
