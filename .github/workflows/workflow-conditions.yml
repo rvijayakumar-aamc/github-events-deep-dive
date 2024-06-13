@@ -14,7 +14,7 @@ jobs:
           run: |
             echo "Checking out code..."
         - name: Build Files
-          if: steps.checkout-rv.outcome == 'success'
+          if: steps.checkout-rv.outcome == 'failure'
           run: |
             echo "Build package..."
   deploy:
