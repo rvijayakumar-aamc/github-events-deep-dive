@@ -10,13 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: Checkout Code
+          id: checkout-rv
           run: |
             echo "Checking out code..."
         - name: Build Files
+          if: steps.checkout-rv.outcome == 'success'
           run: |
             echo "Build package..."
   deploy:
     name: Deploy My App
+    id: deploy-rv
     needs: build
     runs-on: ubuntu-latest
     steps:
