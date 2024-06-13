@@ -25,4 +25,12 @@ jobs:
         - name: Deploy App
           run: |
             echo 'Deploy Application...'    
-        
+        - name: On Cancel
+          if: cancelled()
+          run: |
+            echo 'This job was cancelled'    
+        - name: Always run
+          if: always()
+          run: |
+            echo 'Always run this step'    
+            
