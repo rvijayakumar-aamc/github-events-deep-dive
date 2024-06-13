@@ -19,7 +19,6 @@ jobs:
             echo "Build package..."
   deploy:
     name: Deploy My App
-    id: deploy-rv
     needs: build
     runs-on: ubuntu-latest
     steps:
