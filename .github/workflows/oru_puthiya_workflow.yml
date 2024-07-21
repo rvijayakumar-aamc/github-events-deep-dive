@@ -1,0 +1,17 @@
+name: Oru Puthiya Workflow
+on:
+    workflow_dispatch:
+jobs:
+    AadyatheJob:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Aadyathe Step
+              run : echo "This is Aadyathe Step"  
+            - name: Randamathe Step
+              run : echo "This is Randamathe Step"  
+    RamdamatheJob:
+        runs-on: windows-latest
+        needs: AadyatheJob
+        steps:
+            - name : Avasanathe step
+              run : echo "This is Avasanathe Step"  
