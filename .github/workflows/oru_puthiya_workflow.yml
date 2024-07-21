@@ -16,7 +16,7 @@ jobs:
                 echo "This is Randamathe Step"  
                 echo $ENV_VARIABLE
     RamdamatheJob:
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
         needs: AadyatheJob
         steps:
             - name : Avasanathe step
