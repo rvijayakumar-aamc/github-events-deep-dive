@@ -10,14 +10,21 @@ jobs:
             ENV_VARIABLE: "Env variable at AadyatheJob level"
         steps:
             - name: Aadyathe Step
-              run : echo "This is Aadyathe Step"  
+              run : |
+                echo "This is Aadyathe Step"  
+                echo env
             - name: Randamathe Step
               run : |
                 echo "This is Randamathe Step"  
                 echo $ENV_VARIABLE
+                echo env
     RamdamatheJob:
         runs-on: windows-latest
         needs: AadyatheJob
+        env:
+            NEW_ENV_VAR: New Environment variable at randamathe job
         steps:
             - name : Avasanathe step
-              run : echo "This is Avasanathe Step - $env:ENV_VARIABLE"  
+              run : |
+                echo "This is Avasanathe Step - $env:ENV_VARIABLE"  
+                echo env
