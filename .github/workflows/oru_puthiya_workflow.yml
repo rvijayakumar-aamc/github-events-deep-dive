@@ -1,17 +1,25 @@
 name: Oru Puthiya Workflow
 on:
     workflow_dispatch:
+env:
+    ENV_VARIABLE: "Env variable at Workflow level"
 jobs:
     AadyatheJob:
         runs-on: ubuntu-latest
+        env:
+            ENV_VARIABLE: "Env variable at AadyatheJob level"
         steps:
             - name: Aadyathe Step
               run : echo "This is Aadyathe Step"  
             - name: Randamathe Step
-              run : echo "This is Randamathe Step"  
+              run : |
+                echo "This is Randamathe Step"  
+                echo $ENV_VARIABLE
     RamdamatheJob:
         runs-on: windows-latest
         needs: AadyatheJob
         steps:
             - name : Avasanathe step
-              run : echo "This is Avasanathe Step"  
+              run : |
+                echo "This is Avasanathe Step"  
+                echo $ENV_VARIABLE
