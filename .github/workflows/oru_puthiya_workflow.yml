@@ -20,5 +20,4 @@ jobs:
         needs: AadyatheJob
         steps:
             - name : Avasanathe step
-              run : |
-                echo "This is Avasanathe Step - $ENV_VARIABLE"  
+              run : echo "This is Avasanathe Step - $ENV_VARIABLE"  
