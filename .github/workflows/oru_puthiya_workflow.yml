@@ -21,5 +21,4 @@ jobs:
         steps:
             - name : Avasanathe step
               run : |
-                echo "This is Avasanathe Step"  
-                echo $ENV_VARIABLE
+                echo "This is Avasanathe Step - $ENV_VARIABLE"  
