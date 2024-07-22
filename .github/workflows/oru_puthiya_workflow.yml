@@ -12,12 +12,12 @@ jobs:
             - name: Aadyathe Step
               run : |
                 echo "This is Aadyathe Step"  
-                echo env
+                echo $env
             - name: Randamathe Step
               run : |
                 echo "This is Randamathe Step"  
                 echo $ENV_VARIABLE
-                echo env
+                echo $env
     RamdamatheJob:
         runs-on: windows-latest
         needs: AadyatheJob
@@ -27,4 +27,4 @@ jobs:
             - name : Avasanathe step
               run : |
                 echo "This is Avasanathe Step - $env:ENV_VARIABLE"  
-                echo env
+                echo $env
