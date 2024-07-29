@@ -27,11 +27,10 @@ on:
 jobs:
   print-tag:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment}}
     if:  ${{ inputs.print_tags }} 
     steps:
       - name: Print the input tag to STDOUT
         run: |
           echo  The tags are ${{ inputs.tags }} with log level ${{inputs.logLevel}} 
-          echo $my_var_env
-        env:
-          my_var_env: "${{ env.RV_ENV_VARIABLE}}"
+          echo "${{ vars.RV_ENV_VARIABLE}}"
