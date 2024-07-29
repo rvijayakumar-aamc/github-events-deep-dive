@@ -11,4 +11,4 @@ jobs:
         timegreeting: ['Morning', ' Evening']
     steps:
     - name: Send greeting
-      run: echo "Hello ${{ matrix.usernm}}. Good ${{timegreeting}} !!"
+      run: echo "Hello ${{ matrix.usernm}}. Good ${{ matrix.timegreeting}} !!"
