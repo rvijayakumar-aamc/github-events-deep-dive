@@ -30,4 +30,6 @@ jobs:
     if:  ${{ inputs.print_tags }} 
     steps:
       - name: Print the input tag to STDOUT
-        run: echo  The tags are ${{ inputs.tags }} with log level ${{inputs.logLevel}} 
+        run: |
+          echo  The tags are ${{ inputs.tags }} with log level ${{inputs.logLevel}} 
+          echo "${{ vars.RV_ENV_VARIABLE}}"
