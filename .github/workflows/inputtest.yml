@@ -1,4 +1,4 @@
-name: Test Inputs
+vname: Test Inputs
 on:
   workflow_dispatch:
     inputs:
@@ -32,4 +32,4 @@ jobs:
       - name: Print the input tag to STDOUT
         run: |
           echo  The tags are ${{ inputs.tags }} with log level ${{inputs.logLevel}} 
-          echo "${{ vars.RV_ENV_VARIABLE}}"
+          echo "${{ env.RV_ENV_VARIABLE}}"
