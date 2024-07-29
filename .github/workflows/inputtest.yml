@@ -32,4 +32,6 @@ jobs:
       - name: Print the input tag to STDOUT
         run: |
           echo  The tags are ${{ inputs.tags }} with log level ${{inputs.logLevel}} 
-          echo "${{ env.RV_ENV_VARIABLE}}"
+          echo $my_var_env
+        env:
+          my_var_env: "${{ env.RV_ENV_VARIABLE}}"
