@@ -14,6 +14,7 @@ jobs:
       run: echo "Hello ${{ matrix.usernm}}. Good ${{ matrix.timegreeting}} !!"
   goodbye:
     runs-on: ubuntu-latest
+    needs: greet
     steps:
       - name: Say GoodBye
         run: echo "Goodbye"
