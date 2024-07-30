@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        usernm: ['Ramya','Saaya','Vijay']
+        usernm: ['Ramya','Saaya']
         timegreeting: ['Morning', ' Evening']
     steps:
     - name: Send greeting
@@ -24,3 +24,4 @@ jobs:
           echo "::notice file=app.js,line=1,col=5,endColumn=7,title=MyNotice::Missing semicolon"
           echo "::warning :: This is a warning message"
           echo "::notice:: This is a debug message"
+          echo "### Flying off! :rocket:" >> $GITHUB_STEP_SUMMARY
