@@ -22,3 +22,5 @@ jobs:
           echo "Goodbye"
           echo "::warning file=app.js,line=1,col=5,endColumn=7,title=MyWarning::Missing semicolon"
           echo "::notice file=app.js,line=1,col=5,endColumn=7,title=MyNotice::Missing semicolon"
+          echo "::warning :: This is a warning message"
+          echo "::notice:: This is a debug message"
